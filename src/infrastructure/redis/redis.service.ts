@@ -11,12 +11,12 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
   ) {}
 
   onModuleInit() {
-    this.logger.log('✅ Redis connection established', 'RedisService');
+    this.logger.redis('✅ Redis connection established');
   }
 
   async onModuleDestroy() {
     await this.redis.quit();
-    this.logger.log('❌ Redis connection closed', 'RedisService');
+    this.logger.redis('❌ Redis connection closed');
   }
 
   // --------------------------

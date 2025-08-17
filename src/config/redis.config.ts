@@ -9,7 +9,7 @@ export const redisConfig = (logger: LoggerService): RedisOptions => {
 
   return {
     host: constants.REDIS_HOST,
-    port: constants.REDIS_PORT,
+    port: Number(constants.REDIS_PORT),
     retryStrategy: (times: number) => {
       const delay = Math.min(times * 50, 2000);
       logger.warn(

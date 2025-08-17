@@ -64,7 +64,7 @@ export class LoggerService implements NestLoggerService {
     this.logger.info(`🔴 ${message}`, { context: 'Redis' });
   }
 
-  auth(message: string) {
+  auth(message: string, error: any) {
     this.logger.info(`🔐 ${message}`, { context: 'Auth' });
   }
 

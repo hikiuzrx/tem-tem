@@ -13,6 +13,7 @@ services:
       - redis
     networks:
       - backend
+    restart: unless-stopped
   db:
     image: mongo:6
     volumes:
@@ -21,12 +22,14 @@ services:
       - "27017:27017"
     networks:
       - backend
+    restart: unless-stopped
   redis:
     image: redis:alpine
     ports:
       - "6379:6379"
     networks:
       - backend
+    restart: unless-stopped
 networks:
   backend:
     driver: bridge
