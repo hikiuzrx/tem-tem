@@ -3,6 +3,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 
 import { constants } from '../../shared/constants';
+import { RedisModule } from '@nestjs-modules/ioredis';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { constants } from '../../shared/constants';
       secret: constants.JWT_SECRET,
       signOptions: { expiresIn: constants.JWT_EXPIRES_IN },
     }),
+    RedisModule,
   ],
   providers: [AuthService],
   exports: [AuthService, JwtModule],
