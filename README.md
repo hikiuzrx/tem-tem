@@ -169,7 +169,10 @@ A robust, production-ready backend built with **NestJS**, **MongoDB (Mongoose)**
   - Set up MongoDB, Redis, and Cloudinary credentials (see `src/config/`)
 3. **Run in development**
   ```sh
-  yarn start:dev
+  docker compose up --build 
+or 
+ docker compose up -d 
+ docker logs -f app
   ```
 4. **Run tests**
   ```sh
