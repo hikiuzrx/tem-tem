@@ -1,0 +1,26 @@
+node_modules
+logs
+*.log
+dist
+.env
+.env.*
+coverage
+.idea
+.vscode
+.DS_Store
+yarn-error.log
+npm-debug.log
+*.tsbuildinfo
+
+# OS/Editor junk
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Test output
+junit.xml
+
+# Docker
+

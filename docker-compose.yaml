@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: dockerfile.dev
     ports:
-      - "3000:3000"
+      - "${APP_PORT:-3000}:3000"
     env_file:
       - .env
     depends_on:
@@ -19,14 +19,14 @@ services:
     volumes:
       - db_data:/data/db
     ports:
-      - "27017:27017"
+      - "${MONGO_PORT:-27017}:27017"
     networks:
       - backend
     restart: unless-stopped
   redis:
     image: redis:alpine
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT:-6379}:6379"
     networks:
       - backend
     restart: unless-stopped
